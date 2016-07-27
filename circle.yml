@@ -2,6 +2,10 @@ machine:
   java:
     version: openjdk8
 
+dependencies:
+  pre:
+    - TERM=dumb ./gradlew dependencies
+
 test:
   override:
     - TERM=dumb ./gradlew check -Dscan
