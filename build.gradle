@@ -23,7 +23,7 @@ plugins {
     id "org.sonarqube" version "1.0"
 }
 
-group = 'org.aim42'
+group = 'com.patdouble'
 
 
 
@@ -146,7 +146,7 @@ asciidoctor {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'org.aim42'
+            groupId 'com.patdouble'
             artifactId project.name
             version project.version
             from components.java
