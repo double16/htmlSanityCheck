@@ -4,6 +4,7 @@ machine:
 
 test:
   override:
+    - export TERM=dumb
     - ./gradlew check -Dscan
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
