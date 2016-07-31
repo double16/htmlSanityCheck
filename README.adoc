@@ -1,5 +1,6 @@
 = image:./htmlsanitycheck-logo.png[Html-SC] Html Sanity Check
 :version: 0.9.6-SNAPSHOT
+image:https://circleci.com/gh/double16/htmlSanityCheck.svg?style=svg&circle-token=3a8f9af051166d3ee5aad8a14d7d48f2c80b141f["CircleCI", link="https://circleci.com/gh/double16/htmlSanityCheck"]
 
 :plugin-url: https://github.com/aim42/htmlSanityCheck
 :plugin-issues: https://github.com/aim42/htmlSanityCheck/issues
