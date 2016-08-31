@@ -101,6 +101,7 @@ class HtmlSanityCheckTask extends DefaultTask {
 					junitResultsDir,
                     checkExternalLinks
             )
+            allChecksRunner.consoleReport = false
 
             // perform the actual checks
             allChecksRunner.performAllChecks()
