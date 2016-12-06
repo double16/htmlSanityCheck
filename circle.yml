@@ -1,10 +1,16 @@
 machine:
   java:
     version: openjdk8
+  environment:
+    TERM: dumb
+
+dependencies:
+  pre:
+   - ./gradlew primeCache
 
 test:
   override:
-    - TERM=dumb ./gradlew check -Dscan
+    - ./gradlew check -Dscan
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
@@ -15,6 +21,6 @@ deployment:
     commands:
       - ./gradlew publishPluginMavenPublicationToMavenRepository
   release:
-    tag: /release-.*/
+    tag: /[0-9].*/
     commands:
       - ./gradlew publishPlugins
