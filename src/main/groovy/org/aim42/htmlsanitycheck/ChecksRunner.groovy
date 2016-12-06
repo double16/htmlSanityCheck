@@ -9,6 +9,7 @@ import org.aim42.htmlsanitycheck.html.HtmlPage
 import org.aim42.htmlsanitycheck.report.ConsoleReporter
 import org.aim42.htmlsanitycheck.report.HtmlReporter
 import org.aim42.htmlsanitycheck.report.JUnitXmlReporter
+import org.aim42.htmlsanitycheck.report.LoggerReporter
 import org.aim42.htmlsanitycheck.report.Reporter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -29,6 +30,9 @@ class ChecksRunner {
 
     // where do we put our junit results
     private File junitResultsDir
+
+	/** Determines if the report is output to the console. */
+	boolean consoleReport = true
 
     // TODO: handle checking of external resources
     private Boolean checkExternalResources = false
@@ -190,8 +194,13 @@ class ChecksRunner {
         resultsForAllPages.stopTimer()
 
         // and then report the results
-        reportCheckingResultsOnConsole()
-        reportCheckingResultsAsHTML(checkingResultsDir.absolutePath)
+        reportCheckingResultsOnLogger()
+        if (consoleReport) {
+            reportCheckingResultsOnConsole()
+        }
+        if (checkingResultsDir) {
+            reportCheckingResultsAsHTML(checkingResultsDir.absolutePath)
+        }
 		if (junitResultsDir) {
 			reportCheckingResultsAsJUnitXml(junitResultsDir.absolutePath)			
 		}
@@ -204,6 +213,17 @@ class ChecksRunner {
      */
     private void reportCheckingResultsOnConsole() {
         Reporter reporter = new ConsoleReporter(resultsForAllPages)
+
+        reporter.reportFindings()
+
+    }
+
+    /**
+     * reports results to logger
+     * TODO:
+     */
+    private void reportCheckingResultsOnLogger() {
+        Reporter reporter = new LoggerReporter(resultsForAllPages, logger)
 
         reporter.reportFindings()
 
