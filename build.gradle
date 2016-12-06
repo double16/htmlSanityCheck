@@ -54,6 +54,7 @@ apply plugin: "com.gradle.plugin-publish"
 
 // publish to (local) maven repo
 apply plugin: 'maven-publish'
+apply from: "config/publish-snapshot.gradle"
 
 // determine test coverate
 apply from: "config/coverage.gradle"
@@ -144,7 +145,7 @@ asciidoctor {
 
 // ==========================================================
 // if you use htmlSanityCheck locally, publish with
-// "gradle uploadToLocalMaven
+// "gradle publishToMavenLocal"
 
 
 publishing {
