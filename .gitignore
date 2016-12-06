@@ -21,3 +21,4 @@ build-doc.txt
 .sonar
 build/
 /.nb-gradle/
+setenv.sh
