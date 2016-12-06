@@ -39,6 +39,7 @@ class HtmlSanityCheckTask extends DefaultTask {
 
     // shall we also check external resources?
     @Optional
+	@Input
     Boolean checkExternalLinks = false
 
     //

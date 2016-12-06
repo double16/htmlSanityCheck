@@ -171,7 +171,7 @@ apply from: 'config/publish-gradle-plugin.gradle'
 // =========================================================
 task info(
         description: "info on path and objects"
-) <<
+) { doLast
         {
             println "project.name         : " + project.name
             println "version              : " + version
@@ -183,6 +183,7 @@ task info(
             println "targetCompatibility  : " + rootProject.targetCompatibility
             println "="*80
         }
+}
 
 
 /*
