@@ -11,6 +11,7 @@ test:
 
 deployment:
   staging:
+    branch: master
     commands:
       - ./gradlew publishPluginMavenPublicationToMavenRepository
   release:
