@@ -1,13 +1,13 @@
 
 pluginBundle {
-    website = 'https://github.com/aim42/htmlSanityCheck'
-    vcsUrl = 'https://github.com/aim42/htmlSanityCheck'
+    website = 'https://github.com/double16/htmlSanityCheck'
+    vcsUrl = 'https://github.com/double16/htmlSanityCheck'
     description = 'Checks HTML files for broken links, missing images etc.'
     tags = ['checks', 'quality', 'documentation', 'html', 'asciidoctor', 'test']
 
     plugins {
         htmlSanityCheck {
-            id = 'org.aim42.htmlSanityCheck'
+            id = 'com.patdouble.htmlSanityCheck'
             displayName = 'htmlSanityCheck plugin'
 
         }
