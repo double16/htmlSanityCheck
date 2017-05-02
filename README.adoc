@@ -1,6 +1,5 @@
 = image:./htmlsanitycheck-logo.png[Html-SC] Html Sanity Check
-:version: 0.9.6-SNAPSHOT
-image:https://circleci.com/gh/double16/htmlSanityCheck.svg?style=svg&circle-token=3a8f9af051166d3ee5aad8a14d7d48f2c80b141f["CircleCI", link="https://circleci.com/gh/double16/htmlSanityCheck"]
+:version: 0.9.6
 
 :plugin-url: https://github.com/aim42/htmlSanityCheck
 :plugin-issues: https://github.com/aim42/htmlSanityCheck/issues
@@ -32,11 +31,23 @@ are planned for future releases.
 image:http://img.shields.io/:license-ccsa4-green.svg[link="https://creativecommons.org/licenses/by-sa/4.0/"^]
 image:https://badge.waffle.io/aim42/{project}.png?label=bug&title=bugs[link={project-bugs}]
 image:http://img.shields.io/github/issues/aim42/htmlsanitycheck.svg[link={project-issues}]
-image:https://img.shields.io/badge/last_update-Jun_15_2015-ff69b4.svg[link={project-url}]
+image:https://img.shields.io/badge/last_update-Jan_11_2017-ff69b4.svg[link={project-url}]
+image:https://travis-ci.org/aim42/htmlSanityCheck.svg?branch=master["Build Status", link="https://travis-ci.org/aim42/htmlSanityCheck"]
 
 == Installation
 
 Use the following snippet inside a Gradle build file:
+
+.build.gradle
+[source,groovy]
+[subs="attributes"]
+----
+plugins {
+  id 'org.aim42.{project}' version '{version}'
+}
+----
+
+OR
 
 .build.gradle
 [source,groovy]
@@ -116,11 +127,11 @@ buildscript {
     dependencies {
         classpath (group: 'gradle.plugin.org.aim42',
                 name: 'htmlSanityCheck',
-                version: '0.9.3')
+                version: '0.9.6')
 
         classpath (group: 'org.asciidoctor',
                     name: 'asciidoctor-gradle-plugin',
-                    version: '1.5.2')
+                    version: '1.5.3')
     }
 }
 
@@ -245,7 +256,7 @@ checks are still possible...
 == Technical Documentation
 In addition to checking HTML, this project serves as an example for http://arc42.de[arc42].
 
-Please see our https://rawgit.com/aim42/htmlSanityCheck/master/build/html5/hsc_arc42.html[software architecture documentation].
+Please see our https://rawgit.com/aim42/htmlSanityCheck/gh-pages/hsc_arc42.html[software architecture documentation].
 
 
 == Fundamentals
